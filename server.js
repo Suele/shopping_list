@@ -11,6 +11,10 @@ app.use(bodyParser.json());
 mongoose.connect('mongodb://localhost/mern_shopping');
 
 //verifica se houve uma conexão com o bd ou não
-let db = mongoose.connection
-	.then(() => {console.log('connected')})
+mongoose.connection
+	.then(() => {console.log('>>>>> connected mongoDB')})
 	.catch(err => console.log(err));
+
+app.listen(3000, () => {
+	console.log('>>>>> server online');
+})	
