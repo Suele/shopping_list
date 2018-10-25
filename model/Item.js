@@ -1,4 +1,5 @@
 const mongoose = require('mongoose');
+const Schema = mongoose.Schema;
 
 // cria a shema como foi especificado.
 const ItemShema = new Schema({
@@ -12,4 +13,4 @@ const ItemShema = new Schema({
   }
 });
 
-module.exports = mongoose.model('Item', ItemShema);
+module.exports = Item = mongoose.model('Item', ItemShema);
