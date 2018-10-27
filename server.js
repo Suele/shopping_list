@@ -14,15 +14,15 @@ mongoose.connect('mongodb://localhost/mern_shopping');
 
 //verifica se houve uma conexão com o bd ou não
 mongoose.connection
-	.then(() => {
-		console.log('>>>>> connected mongoDB')
-	})
-	.catch(err => console.log(err));
+  .then(() => {
+    console.log('>>>>> connected mongoDB')
+  })
+  .catch(err => console.log(err));
 
 // usando a rotas items
 app.use('/api/items', items);
 
 //abre conexão não porta 3000.	
 app.listen(3000, () => {
-	console.log('>>>>> server online');
+  console.log('>>>>> server online');
 });
