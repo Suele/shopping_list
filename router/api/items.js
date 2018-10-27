@@ -7,8 +7,10 @@ const Item = require('../../model/Item');
 // esta rota vai trazer todos os dados que Items tiver
 router.get('/', (req, res) => {
     Item.find()
-    .sort({date: -1})
+    .sort({date: -1})// ordena os dados que serão mostrados.
     .then(items => res.json(items));
 });
+
+router.post('')
 
 module.exports = router;
