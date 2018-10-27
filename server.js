@@ -1,8 +1,9 @@
 const express = require('express');
-const app = express();
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
+const app = express();
 
+// atribuindo o caminho a variavel items
 const items = require('./router/api/items');
 
 //middleware body-parser
@@ -13,12 +14,15 @@ mongoose.connect('mongodb://localhost/mern_shopping');
 
 //verifica se houve uma conexão com o bd ou não
 mongoose.connection
-	.then(() => {console.log('>>>>> connected mongoDB')})
+	.then(() => {
+		console.log('>>>>> connected mongoDB')
+	})
 	.catch(err => console.log(err));
 
-// rotas
-app.use('/api/items', items);	
+// usando a rotas items
+app.use('/api/items', items);
 
+//abre conexão não porta 3000.	
 app.listen(3000, () => {
 	console.log('>>>>> server online');
-});	
+});
