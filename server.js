@@ -23,6 +23,6 @@ mongoose.connection
 app.use('/api/items', items);
 
 //abre conexão não porta 3000.	
-app.listen(3000, () => {
+app.listen(3001, () => {
   console.log('>>>>> server online');
 });
