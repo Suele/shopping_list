@@ -20,8 +20,8 @@ router.post('/', (req, res) => {
 
   // salva os dados no BD.
   newItem.save()
-    .then(res.status(200).json({
-      statusCode: '200', //ok
+    .then(res.status(201).json({
+      statusCode: 201, //Created
       mensagem: 'Item salvo no BD',
       createNewItem: newItem
     }));
