@@ -32,10 +32,8 @@ class ShoppingList extends Component{
 								<ListGroupItem>
 									<Button className="remove-btn" color="danger" size="sm" onClick={() => this.setState((state => ({
 										items: state.items.filter(item => item.id !== id)
-									}))
-									)}>
-
-									&times;</Button>
+									})))}>&times;
+									</Button>
 									{name}
 								</ListGroupItem>
 							</CSSTransition>
