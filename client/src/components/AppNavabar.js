@@ -14,8 +14,16 @@ import {
 } from 'reactstrap';
 
 class AppNavbar extends Component{
-	constructor(){
-		
+	state = {
+		// estado atual dos items como por exemplo dropdown
+		isOpen: false
+	}
+
+	// controla o estado do isOpen
+	toogle = () => {
+		this.setState({
+			isOpen: !this.state.isOpen
+		});
 	}
 }
 
