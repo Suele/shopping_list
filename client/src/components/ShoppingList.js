@@ -2,16 +2,10 @@ import React, { Component } from 'react';
 import { Container, ListGroup, ListGroupItem, Button } from 'reactstrap';
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
 import uuid from 'uuid';
-
+import { connect } from 'react-redux';
+import { getItems } from '../actions/itemActions';
+import PropTypes from 'prop-types';
 class ShoppingList extends Component{
-  state = {
-    items: [
-      {id: uuid(), name: 'Pão'},
-      {id: uuid(), name: 'Leite'},
-      {id: uuid(), name: 'Café'},
-      {id: uuid(), name: 'Queijo'},
-    ]
-	}
 		
 	render(){
 		const { items } = this.state;
@@ -45,4 +39,12 @@ class ShoppingList extends Component{
 	}
 }
 
-export default ShoppingList;
+ShoppingList.PropTypes = {
+	
+}
+
+const mapStateTopProps = (state) => ({
+	item: state.item
+});
+
+export default connect(mapStateTopProps, {getItems})(ShoppingList);
