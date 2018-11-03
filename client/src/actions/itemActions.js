@@ -12,3 +12,10 @@ export const deleteItem = id => {
     payload: id
   };
 };
+
+export const addItem = newItem => {
+  return {
+    type: ADD_ITEMS,
+    payload: newItem
+  };
+};
